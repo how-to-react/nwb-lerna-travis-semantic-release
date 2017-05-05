@@ -28,12 +28,13 @@
     "lerna": "lerna"
   },
   "devDependencies": {
-    "cz-lerna-changelog": "^1.2.1",
-    "istanbul": "^0.4.5",
-    "lerna": "^2.0.0-rc.4",
     "commitizen": "^2.9.5",
+    "coveralls": "^2.13.1",
+    "cz-lerna-changelog": "^1.2.1",
     "eslint": "^3.14.1",
     "husky": "^0.13.1",
+    "istanbul": "^0.4.5",
+    "lerna": "^2.0.0-rc.4",
     "lerna-semantic-release": "^9.0.1",
     "validate-commit-msg": "^2.11.1"
   },
