@@ -1,7 +1,6 @@
 module.exports = {
   type: 'react-app',
   karma: {
-    reporters: ['coverage'],
     extra: {
       coverageReporter: {
         dir : 'coverage/',

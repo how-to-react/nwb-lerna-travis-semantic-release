@@ -5,7 +5,6 @@ module.exports = {
     umd: false
   },
   karma: {
-    reporters: ['coverage'],
     extra: {
       coverageReporter: {
         dir : 'coverage/',

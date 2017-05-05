@@ -26,18 +26,13 @@ if [[ ${TRAVIS_BRANCH} == 'master' ]]; then
   git remote add origin https://github.com/how-to-react/nwb-lerna-travis-semantic-release.git
   git fetch origin
   git clone https://github.com/${TRAVIS_REPO_SLUG}.git ${TRAVIS_REPO_SLUG}
-  git checkout $TRAVIS_BRANCH
-
-  echo "Username: ${RELEASE_GH_USERNAME}";
+  git checkout ${TRAVIS_BRANCH}
 
   git config credential.helper store
   echo "https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/how-to-react/nwb-lerna-travis-semantic-release.git" > ~/.git-credentials
 
-
-  echo "Token length ${#NPM_TOKEN}";
+  echo "Adding token with length ${#NPM_TOKEN}";
   npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN} -q
-
-  echo "Github: ${RELEASE_GH_USERNAME} ${RELEASE_GH_EMAIL}"
 
   git config --global user.email ${RELEASE_GH_EMAIL}
   git config --global user.name ${RELEASE_GH_USERNAME}
