@@ -1,6 +1,6 @@
 {
   "name": "@how-to-react/lerna-semr-nwb-web-module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wen module for lerna",
   "main": "lib/index.js",
   "module": "es/index.js",
