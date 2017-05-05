@@ -22,7 +22,7 @@
     "commit": "git-cz",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
     "semantic-release-dry-run": "lerna-semantic-release pre && lerna-semantic-release post",
-    "precommit": "npm run test",
+    "precommit": "lerna exec npm run test",
     "commitmsg": "validate-commit-msg",
     "prepush": "npm run test",
     "lerna": "lerna"
