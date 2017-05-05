@@ -1,0 +1,51 @@
+{
+  "name": "@how-to-react/nwb-lerna-travis-semantic-release",
+  "version": "1.0.0",
+  "description": "NWB with lerna, travis and semantic release integration",
+  "homepage": "https://github.com/how-to-react/nwb-lerna-travis-semantic-release#readme",
+  "author": "Stephen Fraser <stephen.fraser@digirati.com> (https://stephen.wf/)",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/how-to-react/nwb-lerna-travis-semantic-release.git"
+  },
+  "bugs": {
+    "url": "https://github.com/how-to-react/nwb-lerna-travis-semantic-release/issues"
+  },
+  "scripts": {
+    "coverage:publish": "npm run coverage:combine && cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
+    "coverage:combine": "istanbul report --include \"./packages/**/coverage/coverage.json\" lcovonly text-summary",
+    "postinstall": "lerna bootstrap --hoist",
+    "release": "lerna publish --conventional-commits",
+    "test": "lerna exec npm run test:coverage",
+    "commit": "git-cz",
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
+    "semantic-release-dry-run": "lerna-semantic-release pre && lerna-semantic-release post",
+    "precommit": "npm run test",
+    "commitmsg": "validate-commit-msg",
+    "prepush": "npm run test",
+    "lerna": "lerna"
+  },
+  "devDependencies": {
+    "cz-lerna-changelog": "^1.2.1",
+    "istanbul": "^0.4.5",
+    "lerna": "^2.0.0-rc.4",
+    "commitizen": "^2.9.5",
+    "eslint": "^3.14.1",
+    "husky": "^0.13.1",
+    "lerna-semantic-release": "^9.0.1",
+    "validate-commit-msg": "^2.11.1"
+  },
+  "release": {
+    "branch": "master"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-lerna-changelog/"
+    },
+    "validate-commit-msg": {
+      "helpMessage": "Commit message violates the rules defined for this project. Please, execute `npm run commit` to generate a correct commit message with `commitizen`"
+    }
+  }
+}

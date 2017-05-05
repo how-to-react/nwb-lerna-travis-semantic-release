@@ -1,0 +1,28 @@
+{
+  "name": "@how-to-react/lerna-semr-nwb-web-module",
+  "version": "1.0.0",
+  "description": "Wen module for lerna",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-web-module",
+    "clean": "nwb clean-module",
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.3",
+    "nwb": "0.15.x"
+  },
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "https://github.com/how-to-react/nwb-lerna-travis"
+}

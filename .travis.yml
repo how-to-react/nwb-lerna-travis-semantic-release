@@ -1,0 +1,32 @@
+sudo: false
+
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+    - $HOME/.npm
+
+notifications:
+  email: false
+
+node_js:
+  - '7'
+
+before_install: .travis/before_install.sh
+
+script:
+    - npm test
+
+after_success: .travis/after_success.sh
+
+after_failure: .travis/after_failure.sh
+
+script: npm test
+
+git:
+  depth: 1
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
